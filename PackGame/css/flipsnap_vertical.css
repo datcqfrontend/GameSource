@@ -1,0 +1,60 @@
+
+.fsv_viewport {
+  /*height: 280px;
+  width: 230px;*/
+  overflow: hidden;
+  margin: 0 auto;
+  /*padding: 30px 0; */
+
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.no_move{
+  color:#CCCCCC;
+}
+
+.fsv_item {
+  /*width: 200px;*/
+  /*margin: 30px 10px;*/
+  font-size: 50px;
+  text-align: center;
+  /*padding: 50px 0;*/
+  background: #EFEFEF;
+/*  border: 5px solid #999;*/
+  color: #666;
+  position:relative;
+
+
+  width: 100%;
+  height: 100%;
+}
+
+.pointer {
+  text-align: center; }
+
+.pointer span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  border: 1px solid #000;
+}
+
+.pointer span.current {
+  background: #FC0; }
+
+.controls {
+  text-align: center;
+  margin: 0 0 15px 0; }
+
+.controls .num {
+  width: 60px; }
+
+.flipsnapVertical{
+  /*padding-top: 20px;*/
+  width: 100%;
+  height: 100%;
+}

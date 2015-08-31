@@ -1,0 +1,792 @@
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License:none (public domain)*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #147AD5;
+	/*background-image: url("../img/game/opening02.png");*/
+	background-size: cover;
+}
+#share{
+	position: absolute;
+	top:500px;
+	z-index:0;
+	opacity: 0;
+}
+#wronging{
+	font-size:50px;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	color:#fff;
+}
+.hide{
+	display:none;
+}
+.opening_arrow{
+	background-image: url("../img/game/opening01_arrow.gif");
+	width: 102px;
+	height: 44px;
+	position: absolute;
+	z-index: 100;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -51px;
+}
+#intro1{
+	background-color: #2B3147;
+	background-image: url("../img/game/opening01_bkg.png");
+	background-size: 100%;
+    background-repeat: no-repeat;
+}
+#intro2{
+	background-color: #2B3147;
+	background-image: url("../img/game/opening02_bkg.png");
+	background-size: 100%;
+    background-repeat: no-repeat;
+}
+#intro3{
+	background-color: #141E33;
+	background-image: url("../img/game/opening03_bkg.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#final{
+	background-color: #1479D5;
+	background-position: top center;
+	background-image: url("../img/game/final_bkg03.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#skin{
+	position: absolute;
+	background-image: url("../img/game/opening01_sprite.png");
+	width: 334px;
+	height: 334px;
+	left: 114px;
+	top: 252px;
+
+	width: 445px;
+	height: 445px;
+	left: 152px;
+	top: 336px;
+	background-size: 2227px;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+}
+#nose{
+	position: absolute;
+	background-image: url("../img/game/opening02_sprite.png");
+	width: 506px;
+	height: 280px;
+	left: 105px;
+	top: 461px;
+	background-size: 2527px;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+}
+#skin_nose{
+	position: absolute;
+	background-image: url("../img/game/landing_sprite.png");
+	width: 599px;
+    height: 460px;
+    left: 16px;
+    top: 297px;
+	background-size: 1194px;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+}
+
+#bacteria{
+	position: absolute;
+	background-image: url("../img/game/opening03_sprite.png");
+	width: 434px;
+	height: 508px;
+	top: 342px;
+	left: 122px;
+	background-size: 869px;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+}
+#final_btn{
+	position: absolute;
+	width: 50%;
+	height: 20%;
+	top: 52%;
+	left: 50%;
+	margin-left: -25%;
+	display: block;
+}
+#final_content{
+	color: #FFF;
+	font-size: 15px;
+	position: absolute;
+	text-align: left;
+	top: 850px;
+	left: 230px;
+	line-height: 20px;
+}
+#container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-image: url("../img/game/bkg_play.png");
+	background-position: center center;
+	background-size: cover;
+}
+#timer{
+	position: absolute;
+	top:30px;
+	width: 100px;
+	height: 30px;
+	border:3px solid black;
+	font-size:30px;
+	line-height: 30px;
+	left: 50%;
+	margin-left: -50px;
+	text-align:center;
+	z-index:250;
+}
+#sb{
+	width: 380px;
+	height: 200px;
+	position: absolute;
+	top: 69%;
+	left: 50%;
+	margin-left: -190px;
+	z-index: 250;
+	display: none;
+}
+#opening{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/*.opening01{
+	background-image: url("../img/game/opening01.png");
+}
+.opening02{
+	background-image: url("../img/game/opening02.png");
+}*/
+#description{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #2B3147;
+	background-image:url("../img/game/landing_bkg3.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position:top center;
+}
+.bubble_text{
+	width: 192px;
+	height: 123px;
+	position: absolute;
+	left: 100px;
+	top: 250px;
+	background-image: url("../img/game/landing_txt_bubble.png");
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.monster{
+	width: 269px;
+	height: 293px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -146px;
+	margin-left: -134px;
+	background-repeat: no-repeat;
+	background-image: url("../img/game/devil_animation_all05.png");
+	z-index:60;
+}
+#description .monster,#videopage .monster{
+	width: 269px;
+	height: 293px;
+	margin-top: -146px;
+	margin-left: -134px;
+}
+.monster_move_1{
+	-webkit-animation: monster_move 2s steps(12) infinite;
+}
+#monster{
+	top: 51%;
+	background-position: 0 -278px;
+}
+.monster_move_2{
+	-webkit-animation: monster_moves 2s steps(12) infinite;
+}
+@-webkit-keyframes monster_move{
+	from{   background-position: 0 0; }
+    to{  	background-position: -3228px 0; }
+}
+@-webkit-keyframes monster_moves{
+	from{   background-position: 0 0px; }
+    to{  	background-position: -3228px 0; }
+
+}
+
+#container #monster{
+	display:none;
+}
+#rule{
+	position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 160px;
+    height: 70px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    z-index: 6000;
+}
+#videopage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#video_btn{
+	width: 132px;
+    height: 240px;
+    position: absolute;
+    top: 27%;
+    left: 80%;
+    margin-left: -59px;
+    margin-top: -70px;
+    z-index: 100;
+}
+#video_animation{
+	position:absolute;
+	width: 91px;
+	height: 91px;
+	background-image: url("../img/game/final_video_btn.png");
+	z-index:50;
+	top: 10%;
+	right: 8.2%;
+	/*outline:1px solid red;*/
+	-webkit-animation-name: sc;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite
+}
+@-webkit-keyframes sc{
+	0%{-webkit-transform: scale(1.3,1.3);}
+	50%{-webkit-transform: scale(0.85,0.85);}
+	100%{-webkit-transform: scale(1.3,1.3);}
+}
+
+#video{
+	position: absolute;
+	z-index:10000;
+	width: 100%;
+	height: 100%;
+}
+#video_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity:0.8;
+	z-index:10;
+}
+
+#video iframe{
+	position: absolute;
+	width: 480px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	margin-left: -240px;
+	margin-top: -200px;
+	z-index:20;
+}
+#video_close{
+	position: absolute;
+	z-index: 20;
+	top: 3%;
+	right: 3%;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	line-height: 50px;
+	color:#fff;
+	text-align: center;
+	font-family:arial;
+}
+#rule_page{
+	position: absolute;
+	z-index:10000;
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+#rule_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity:0.7;
+	z-index:10;
+}
+#rule_content{
+	position: absolute;
+	width: 560px;
+	height: 590px;
+	margin-left: -280px;
+	margin-top: -295px;
+	background-size: cover;
+	background-image: url("../img/game/rules_popup_bkg.png");
+	z-index: 100;
+	top: 50%;
+	left: 50%;
+	border-radius: 15px;
+}
+#rule_title{
+	color: #28B692;
+	position: absolute;
+	top: 47px;
+	left: 30px;
+	width: 500px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	/*font-size: 30px;*/
+	font-size:41px;
+	font-weight: 700;
+	font-family: "Microsoft YaHei";
+}
+#rule_content_text{
+	position: absolute;
+	top: 105px;
+	left: 50%;
+	font-size: 25px;
+	line-height: 36px;
+	color: #30608C;
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	margin-left: -250px;
+	width: 500px;
+}
+#rule_content_text span{
+	color:#30608C;
+	font-size:30px;
+	font-weight:700;
+}
+#rule_notice{
+	color: #333;
+    font-size: 15px;
+    position: absolute;
+    top: 420px;
+    left: 170px;
+    line-height: 23px;
+    text-align: left;
+}
+#rule_close{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 50%;
+	z-index: 150;
+	left: 50%;
+	margin-top: -295px;
+	margin-left: 223px;
+}
+.page0{
+	display:block;
+}
+.page1{
+	display:none;
+}
+.page2{
+	display:none;
+}
+#mark{
+	position: absolute;
+	width: 195px;
+	height: 72px;
+	top: 3%;
+	left: 3%;
+	z-index: 6000;
+	background-image: url("../img/game/mark_btn_bkg.png");
+	display: none;
+}
+#mark_inner{
+	position: absolute;
+	width: 70px;
+	top: 26px;
+	left: 30px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	font-family: sans-serif;
+	height: 30px;
+	line-height: 30px;
+}
+#score_board{
+	display:none;
+	width: 1024px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:50;
+	background-color: #1479D5;
+	background-image: url("../img/game/final_page_back.png");
+	/*background-size: cover;*/
+	/*background-position: center center;*/
+	background-size: contain;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+#score_board_inner{
+	width: 340px;
+	height: 100px;
+	position: absolute;
+	/*top: 52%;*/
+	top: 45%;
+	left: 50%;
+	margin-left: -200px;
+	background-image: url("../img/game/final_devil_icon.png");
+	background-repeat: no-repeat;
+	background-position: left 0px;
+	padding-left: 111px;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 51px;
+	color: #072139;
+	font-family: "Microsoft YaHei";
+	text-align: left;
+	background-size: 100px;
+}
+#score_board_score{
+	display: inline-block;
+	position: relative;
+	font-size: 49px;
+	color: #B21A2C;
+	line-height: 44px;
+	text-align: center;
+	vertical-align: text-bottom;
+	padding-left: 0px;
+	padding-right: 5px;
+	font-family: "Microsoft YaHei",arial;
+}
+#score_board_remark{
+	position: absolute;
+    /*top: 63%;*/
+    top: 61%;
+    width: 600px;
+    left: 50%;
+    margin-left: -300px;
+    text-align: center;
+    color: #072139;
+    font-size:32px;
+    font-family: "Microsoft YaHei";
+    line-height: 40px;
+    font-weight: 700;
+}
+#down_to_escape{
+	background-image: url("../img/game/result_page_arrow03.png");
+    width: 219px;
+    height: 53px;
+    z-index: 200;
+    position: absolute;
+    bottom:5%;
+    left: 50%;
+    margin-left: -110px;
+    display: none;
+    margin-top:0px;
+}
+#again_btn{
+	position: absolute;
+	top: 65%;
+	left: 0px;
+	width: 50%;
+	height: 130px;
+	display: none;
+	z-index: 200;
+}
+#share_btn{
+	position: absolute;
+	top: 65%;
+	right: 0;
+	width: 50%;
+	height: 130px;
+	display: none;
+	z-index: 200;
+}
+#refresh{
+	position: absolute;
+	top: 3%;
+	left: 15%;
+	font-size:50px;
+	z-index:99999;
+}
+#canvas{
+	position: absolute;
+	z-index:90;
+	left: 0;
+}
+#qrcode{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -100px;
+}
+#bumper_left{
+	width: 47px;
+	height: 100%;
+	position: absolute;
+	z-index: 5000;
+	left: 2px;
+	top: 0;
+	overflow: hidden;
+	display:none;
+
+}
+#bumper_left_inner{
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/bkg_play_cover03.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 47px 100%;
+}
+#bumper_right{
+	width: 47px;
+	height: 100%;
+	position: absolute;
+	z-index: 5000;
+	right: 2px;
+	top: 0;
+	overflow: hidden;
+	display:none;
+
+}
+#bumper_right_inner{
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/bkg_play_coverR03.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 47px 100%;
+}
+#redborder{
+	outline:3px solid red;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index:10000;
+	display:none;
+}
+#countdown_3{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/counting_bkg01.png");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+#countdown_2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/counting_bkg02.png");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+#countdown_1{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/counting_bkg03.png");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+#countdown_go{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 100%;
+	background-image: url("../img/game/counting_bkg04.png");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+}
+#life{
+	position: absolute;
+	top: 3%;
+	right: 3%;
+	width: 196px;
+	height: 80px;
+	z-index:7000;
+	background-image: url("../img/game/lifebox_bkg.png");
+	display:none;
+}
+.heart{
+	position: absolute;
+	background-image: url("../img/game/lifebox_heart.png");
+	width: 30px;
+	height: 28px;
+	background-position: 0 0 ;
+	top: 25px;
+}
+.heart_off{
+	background-position: 0 -28px ;
+}
+.heart_flash{
+	-webkit-animation: hf 0.5s steps(2) infinite;
+}
+@-webkit-keyframes hf{
+	from{   background-position: 0 0; }
+    to{  	background-position: 0 -56px; }
+}
+#heart_left{
+	right:130px;
+}
+#heart_center{
+	right:80px;
+}
+#heart_right{
+	right:30px;
+}
+#wechat_page{
+	position: absolute;
+	z-index:10000;
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+#wechat_bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity:0.8;
+	z-index:10;
+}
+#wechat_arrow{
+	background-image: url("../img/game/sharing_arrow.png");
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 11;
+	background-position: 130px 30px;
+	background-size: 450px;
+	background-repeat: no-repeat;
+}
+#loading{
+	position: absolute;
+	z-index:100000;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #1378D5;
+	background-image: url("../img/game/loading.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#preload_imgs{
+	width: 0;
+	height: 0;
+	display: none;
+}
+#preload_img_4{
+	background-image: url("../img/game/final_devil_icon.png");
+}
+#preload_img_5{
+	background-image: url("../img/game/bkg_play_cover02.png");
+}
+#preload_img_6{
+	background-image: url("../img/game/bkg_play_coverR02.png");
+}
+#preload_img_7{
+	background-image: url("../img/game/lifebox_heart.png");
+}
+#preload_img_8{
+	background-image: url("../img/game/ball_bingo.png");
+}
+.music_btn{
+	position: absolute;
+	background-repeat: no-repeat;
+	width: 37px;
+	height: 38px;
+	right: 35px;
+	top: 35px;
+}
+.music_cover{
+	position: absolute;
+	width:200px;
+	height: 200px;
+	top: 0;
+	right: 0;
+	z-index:100;
+}
+.music_close{
+	width: 37px;
+	height: 38px;
+	background-image: url("../img/game/music_btn.png");
+	background-position: -37px 0px;
+}
+.music_open{
+	background-image: url("../img/game/music_btn.png");
+	background-position: 0px 0px;
+	-webkit-animation-name: movemusic;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-transform-origin: 50% 0%;
+}
+
+@-webkit-keyframes movemusic {
+	0%{
+		top:20px;
+		right:20px;
+	}
+	50%{
+		top:35px;
+		right:35px;
+	}
+	100%{
+		top:20px;
+		right:20px;
+	}
+}

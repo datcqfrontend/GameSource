@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=1024, maximum-scale=1.0" />
+		<meta name="HandheldFriendly" content="true" />
+		<title>GAME TEST</title>
+		<link rel="stylesheet" type="text/css" href="css/game.css">
+		<link rel="stylesheet" type="text/css" href="css/flipsnap_vertical.css">
+	</head>
+<body data-page="landing">
+<img src="img/game/share_img.jpg" alt="" id="share">
+<div id="wronging" class="hide">
+	请垂直手机！
+</div>
+<div class="opening_arrow"></div>
+<div class="fsv_viewport">
+	<div class="flipsnapVertical">
+		<div class="fsv_item" id="intro1">
+			<div class="music_btn music_close"></div>
+			<div class="music_cover"></div>
+			<div id="skin"></div>
+		</div>
+		<div class="fsv_item" id="intro2">
+			<div class="music_btn music_close"></div>
+			<div class="music_cover"></div>
+			<div id="nose"></div>
+		</div>
+		<div class="fsv_item" id="intro3">
+			<div class="music_btn music_close"></div>
+			<div class="music_cover"></div>
+			<div id="bacteria"></div>
+		</div>
+		<div class="fsv_item" id="main_content">
+			<div id="container">
+				<div id="description" 	class="page1"></div>
+				<div id="skin_nose"></div>
+				<div id="videopage" 	class="page2">
+					<div class="bubble_text"></div>
+					<div class="monster"></div>
+				</div>
+				<div id="rule_page">
+					<div id="rule_bg"></div>
+					<div id="rule_content">
+						<div id="rule_title">游戏规则</div>
+						<div id="rule_content_text">你只有<span>3</span>次机会挡住攻击！
+						<br>为了曝光内幕锁定内因，奋战吧！
+						</div>
+						<div id="rule_notice">
+							氯雷他定片  上海先灵葆雅制药有限公司<br>请按药品说明书或在药师指导下购买和使用<br>国药准字 H10970410  禁忌  对本片过敏者禁用<br>	禁忌内容或不良反应详见说明书<br>沪药广审（文）第2015050188号
+						</div>
+					</div>
+					<div id="rule_close"></div>
+				</div>
+				<div id="life">
+					<div id="heart_left" class="heart"></div>
+					<div id="heart_center" class="heart"></div>
+					<div id="heart_right" class="heart"></div>
+				</div>
+				<div id="wechat_page">
+					<div id="wechat_bg"></div>
+					<div id="wechat_arrow"></div>
+				</div>
+				<div id="score_board">
+					<div id="score_board_inner">
+						哇!你已成功挡住
+						<br><div id="score_board_score"></div>次攻击
+					</div>
+					<div id="score_board_remark">
+						距离完全救出鼻子皮肤还要继续努力哦~
+					</div>
+				</div>
+				<div 	id="down_to_escape"></div>
+				<div 	id="again_btn"></div>
+				<div 	id="share_btn"></div>
+				<div 	id="monster" class="monster" ></div>
+				<div 	id="rule"></div>
+				<div 	id="sb"></div>
+				<div 	id="mark">
+					<div id="mark_inner">0</div>
+				</div>
+				<canvas id="canvas"></canvas>
+				<div id="bumper_left">
+					<div id="bumper_left_inner"></div>
+				</div>
+				<diV id="bumper_right">
+					<div id="bumper_right_inner"></div>
+				</diV>
+				<div id="redborder"></div>
+				<div id="countdown_3"></div>
+				<div id="countdown_2"></div>
+				<div id="countdown_1"></div>
+				<div id="countdown_go"></div>
+			</div>
+		</div>
+		<div class="fsv_item" id="final">
+			<div id="video_animation"></div>
+			<div id="video_btn"></div>
+			<div id="video" class="hide">
+				<div id="video_bg"></div>
+				<div id="video_close">X</div>
+			</div>
+			<a id="final_btn" href="http://www.clarityne.com.cn/" target="_blank" onclick="javascript:ClickEvent('ClarityneH5','CRT_H5/Know_More','click');"></a>
+			<div id="final_content">
+				氯雷他定片  上海先灵葆雅制药有限公司<br>请按药品说明书或在药师指导下购买和使用<br>国药准字 H10970410  禁忌  对本片过敏者禁用<br>	禁忌内容或不良反应详见说明书<br>沪药广审（文）第2015080279号
+			</div>
+		</div>
+	</div>
+</div>
+<div id="preload_imgs">
+	<div id="preload_img_4"></div>
+	<div id="preload_img_5"></div>
+	<div id="preload_img_6"></div>
+	<div id="preload_img_7"></div>
+	<div id="preload_img_8"></div>
+</div>
+<div id="loading"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/flipsnap_vertical.js"></script>
+	<script type="text/javascript" src="js/fastclick.js"></script>
+	<script type="text/javascript" src="js/howler.min.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript">
+		var base_url = '';
+		var site 	 = '';
+	</script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-50350126-2', 'auto');
+ga('send', 'pageview');
+
+function ClickEvent(Category, Action, Label) {
+	ga('send', 'event', Category, Action, Label);
+}
+</script>
+</body>
+</html>
